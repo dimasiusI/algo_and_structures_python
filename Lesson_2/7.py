@@ -3,3 +3,16 @@
 натуральных чисел выполняется равенство: 1+2+...+n = n(n+1)/2,
  где n - любое натуральное число.
 """
+
+n = int(input('Введите конечное число  множества: '))
+
+def summ(n):
+    if n == 1:
+        return 1
+    return n + summ(n - 1)
+
+def dok(n):
+    return int(n*(n+1)/2)
+
+if summ(n) == dok(n):
+    print(f'{summ(n)} = {dok(n)}')

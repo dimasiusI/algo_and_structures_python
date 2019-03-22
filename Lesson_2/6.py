@@ -5,3 +5,28 @@
 число, чем то, что загадано. Если за 10 попыток число не отгадано,
 то вывести загаданное число.
 """
+
+import random
+
+num = random.randint(0, 100)
+
+i = 1
+while i <= 10:
+    answer = int(input('Отгадай число: '))
+
+    if answer == num:
+        print('You win!')
+        break
+    else:
+        if answer < num:
+            print('Загаданное число больше твоего')
+        else:
+            print('Загаданное число меньше твоего')
+
+    i += 1
+
+if i == 11:
+    print('You lose!', num)
+
+
+

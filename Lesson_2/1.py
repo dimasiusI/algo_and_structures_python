@@ -9,3 +9,52 @@
 Также сообщать пользователю о невозможности деления на ноль,
 если он ввел 0 в качестве делителя.
 """
+def operation():
+    print('Возможные операции:', z_[1:], 'или 0 для выхода из программы')
+    z = input('Введите операцию: ')
+
+    if z == z_[0]:
+        return 0
+
+    for i in z_:
+        if z == i:
+            return z
+    print('Неверный знак операции')
+    return operation()
+
+def sec():
+    b = int(input('Введите второе число: '))
+
+    if oper == '/' and b == 0:
+        print('Делить на 0 нельзя')
+        return sec()
+
+    return b
+
+while True:
+    res = ''
+    z_ = ['0', '+', '-', '*', '/']
+
+    a = int(input('Введите первое число: '))
+    res += str(a) + ' '
+
+    oper = operation()
+
+    if oper == 0:
+        print('До новых встреч!')
+        break
+
+    res += str(oper) + ' '
+
+    b = sec()
+    res += str(b)
+
+    if oper == '+':
+        print(f'{res} = {a+b}')
+    if oper == '-':
+        print(f'{res} = {a-b}')
+    if oper == '*':
+        print(f'{res} = {a*b}')
+    if oper == '/':
+        print(f'{res} = {a/b}')
+
